@@ -27,10 +27,11 @@ function ArrayToString($array) {
 
 
 
-function dd($array = NULL):void {
-	echo '<pre>';
-	print_r($array);
-	echo '</pre>';
+function dd($d = NULL, $e=0):void {
+	echo "<pre>";
+  if($e == 0) print_r($d);
+  elseif($e == 1) var_dump($d);
+  echo "</pre>";
 }
 
 
@@ -73,7 +74,17 @@ function DeliteArrayRow(array $array, string $row_key) :array {
 }
 
 
-function assets(string $path = '/') {
+function assets(string $path = '/'):string|NULL {
 	$url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].$path;
 	return $url;
+}
+
+
+function validate(string $str):bool {
+
+	if(strlen($str) > 0){
+		return true;
+	} else {
+		return false;
+	}
 }

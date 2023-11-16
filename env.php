@@ -1,6 +1,14 @@
 <?php 
 
 
+function evd(array $d,$e=0):void {
+  echo "<pre>";
+  if($e == 0) print_r($d);
+  elseif($e == 1) var_dump($d);
+  echo "</pre>";
+}
+
+
 class Env {
 
 
@@ -15,7 +23,11 @@ class Env {
     	// $buffer = fgets($file);
     }
 
-    private function ignoreComments(array $array) : array {
+    private function ignoreComments(array $array) : array 
+    {
+      /* 
+        comment #
+      */
     	
     	$response = array();
     	
@@ -25,21 +37,37 @@ class Env {
     	return $response;
     }
 
+    private function soltToList($value) {
+      echo "list";
+    }
+
+    private function serchList(array $array) {
+      foreach($array as $rs) {
+        
+        for ($s=0; $s < strlen($r); $s++) { 
+          if()
+        }
+      }
+    }
+
+
     private function soltToArray(array $array) {
     	$response = array();
 
     	for ($i=0; $i < count($array); $i++) { 
     		$g = explode('=', $array[$i]);
 
-    		$response[$g[0]] = $g[1];
-    		for ($d=0; $d < strlen($g[1]); $d++) { 
-    			if ($g[1][$d] == '[' or ) {
-    				
-    			}
-    		}
-    	}
+    		// $response[$g[0]] = $g[1];
 
-    	print_r($response['ELLL'][0]);
+        if ($g[1][0] == '[' and false) {
+          $this->soltToList($g);
+        }else {
+          $response[$g[0]] = $g[1];
+        }
+    		
+    	}
+      evd($response, 1);
+    	
     }
 
 

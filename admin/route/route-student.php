@@ -20,10 +20,7 @@ if(isset($_POST['full_name']) and isset($_POST['telephone'])
   } 
   elseif ( empty($_POST['username'])) {
     echo json_encode(['msg' => 'Ввыдите имя пользовател !']);
-  } 
-  // elseif (empty($_POST['subjects'][0])) {
-  //   echo json_encode(['msg' => 'Ввыдите один придмет!']);
-  // } 
+  }
   elseif (empty($_POST['address'])) {
     echo json_encode(['msg' => 'Ввыдите адрес!']);
   } 
@@ -36,7 +33,9 @@ if(isset($_POST['full_name']) and isset($_POST['telephone'])
   elseif (empty($_POST['gender'])) {
     echo json_encode(['msg' => 'Ввыдите пол!']);
   } else {
-      $paramet = [
+    // valite($_POST)
+      if(empty($_POST['pasport_code'])) {
+        $paramet = [
         'full_name'=> $_POST['full_name'],
         'username' => $_POST['username'],
         'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
@@ -46,10 +45,13 @@ if(isset($_POST['full_name']) and isset($_POST['telephone'])
         'phone_number' => $_POST['telephone'],
         'date_of_joined' => $date_tz
         // 'subjects'=> ArrayToString($_POST['groups'])
-      ];
+      ];dd(InsertStudent($conn, $paramet));
+       dd($_POST, 1);
+      }
+      
 
   
-      dd(InsertStudent($conn, $paramet));
+      
   }
 
 
