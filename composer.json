@@ -1,0 +1,27 @@
+{
+    "name": "its/magment-sistem",
+    "type": "project",
+    "discription": "The ITS-managment sistem as temur",
+    "author" : [
+        {
+            "name": "Madetov Temur",
+            "email": "temur1735@gmail.com",
+            "homepage": "https://t.me/madetov_017",
+            "role": "Developer"  
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload":{
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.3"
+    }
+}
