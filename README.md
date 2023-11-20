@@ -1,2 +1,1 @@
-# ITS-magment-sistem
-Проекты для курса
+# My MVC sistem

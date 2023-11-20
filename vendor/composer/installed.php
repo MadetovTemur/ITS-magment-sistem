@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'its/mgr',
+        'name' => 'its/managment',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '46c0b8958cf63a91dbd08b108c5aa7ab7a6614bb',
+        'reference' => '7a82e4ec7f793ca6e643718f3edb2e27829b9d2e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'its/mgr' => array(
+        'its/managment' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '46c0b8958cf63a91dbd08b108c5aa7ab7a6614bb',
+            'reference' => '7a82e4ec7f793ca6e643718f3edb2e27829b9d2e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

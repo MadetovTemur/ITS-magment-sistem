@@ -1,27 +1,27 @@
 {
-    "name": "its/magment-sistem",
+    "name": "its/managment",
+    "description": "BPO managment sistem",
     "type": "project",
-    "discription": "The ITS-managment sistem as temur",
-    "author" : [
+    "authors": [
         {
-            "name": "Madetov Temur",
-            "email": "temur1735@gmail.com",
-            "homepage": "https://t.me/madetov_017",
-            "role": "Developer"  
+          "name": "Temur",
+          "email": "temur1735@gmail.com"
         }
     ],
-    "require": {
-        "php": "^8.2"
-    },
-    "config": {
-        "optimize-autoloader": true
-    },
-    "autoload":{
-        "psr-4": {
-            "App\\": "app"
-        }
-    },
     "require-dev": {
         "symfony/var-dumper": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "DataBaze\\":"Data/"
+        }
+    },
+    "config": {
+      "optimize-autoloader": true,
+      "sort-packages": true
+    },
+    "require": {
+      "php":"^8.2"
     }
 }

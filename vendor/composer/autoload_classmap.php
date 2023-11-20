@@ -6,6 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\App' => $baseDir . '/App/App.php',
+    'App\\Controllers\\LoginController' => $baseDir . '/App/Controllers/LoginController.php',
+    'App\\Controllers\\MainController' => $baseDir . '/App/Controllers/MainController.php',
+    'App\\Http\\Request' => $baseDir . '/App/Http/Request.php',
+    'App\\Router\\Route' => $baseDir . '/App/Router/Route.php',
+    'App\\Router\\Router' => $baseDir . '/App/Router/Router.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => $vendorDir . '/symfony/var-dumper/Caster/AmqpCaster.php',
     'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => $vendorDir . '/symfony/var-dumper/Caster/ArgsStub.php',

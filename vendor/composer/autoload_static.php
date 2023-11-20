@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f
+class ComposerStaticInit84006252db8b0776a2b8bbedb6201230
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -17,6 +17,10 @@ class ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+        ),
+        'D' => 
+        array (
+            'DataBaze\\' => 9,
         ),
         'A' => 
         array (
@@ -33,13 +37,23 @@ class ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'DataBaze\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Data',
+        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
     public static $classMap = array (
+        'App\\App' => __DIR__ . '/../..' . '/App/App.php',
+        'App\\Controllers\\LoginController' => __DIR__ . '/../..' . '/App/Controllers/LoginController.php',
+        'App\\Controllers\\MainController' => __DIR__ . '/../..' . '/App/Controllers/MainController.php',
+        'App\\Http\\Request' => __DIR__ . '/../..' . '/App/Http/Request.php',
+        'App\\Router\\Route' => __DIR__ . '/../..' . '/App/Router/Route.php',
+        'App\\Router\\Router' => __DIR__ . '/../..' . '/App/Router/Router.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/AmqpCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ArgsStub.php',
@@ -112,9 +126,9 @@ class ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit702c002ed5e1a096e52aa265172ecb2f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit84006252db8b0776a2b8bbedb6201230::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit84006252db8b0776a2b8bbedb6201230::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit84006252db8b0776a2b8bbedb6201230::$classMap;
 
         }, null, ClassLoader::class);
     }
