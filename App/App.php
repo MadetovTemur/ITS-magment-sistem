@@ -18,9 +18,9 @@ class App
   public function run()
   {
     $this->contaner->router->dispatch(
-      $this->contaner->request->uri(), 
-      $this->contaner->request->method()
+                  $this->contaner->request->uri(), 
+                  $this->contaner->request->method()
     );
-
   }
+
 }

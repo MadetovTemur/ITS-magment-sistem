@@ -2,8 +2,10 @@
 
 // import
 use App\Router\Route;
-use App\Controllers\MainController;
-// use App\Controllers\LoginController;
+use App\Kurnel\Controllers\MainController;
+use App\Kurnel\Controllers\AdminController;
+
+use App\Middlewares\AuthMiddlewar;
 
 return [
   // test  /singup
@@ -13,5 +15,5 @@ return [
   Route::get('/login', [MainController::class, 'login']),
   Route::post('/singup', [MainController::class, 'singup']),
 
-  
+  Route::get('/admin/', [AdminController::class, 'index'], "grt", $middlewar=[AuthMiddlewar::class]),
 ];

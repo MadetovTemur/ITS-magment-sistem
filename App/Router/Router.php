@@ -6,6 +6,10 @@ use App\View\View;
 use App\Http\Request;
 use App\Http\Redirect;
 use App\Session\Session;
+use App\Database\DataBaze;
+use App\Auth\Auth;
+
+// use App\Middlewares\AbstractMiddlewar;
 
 class Router
 {
@@ -18,7 +22,9 @@ class Router
     private View $view,
     private Request $request,
     private Redirect $redirect,
-    private Session $session
+    private Session $session,
+    private DataBaze $db,
+    private Auth $auth
   )
   {
     $this->initRoutes();
@@ -33,19 +39,29 @@ class Router
       $this->notFound();
     }
 
+    if($route->hasMiddlewar()) {
+      foreach($route->getMiddlewar() as $middleware) {
+        $middleware = new $middleware($this->request, $this->redirect, $this->auth);
+
+        $middleware->handle();
+      }
+      // dd($route);
+    }
+
     if(is_array($route->getAction()) ) {
       [$controller, $action] = $route->getAction();
-      
+
       $controller = new $controller();
 
-      
       call_user_func([$controller,'setView'], $this->view);
       call_user_func([$controller,'setRequest'], $this->request);
       call_user_func([$controller,'setRedirect'], $this->redirect);
       call_user_func([$controller,'setSession'], $this->session);
+      call_user_func([$controller,'setDatabase'], $this->db);
+      call_user_func([$controller,'setAuth'], $this->auth);
 
       call_user_func([$controller, $action]);
-      
+
     } else {
       call_user_func($route->getAction());
     }
@@ -79,7 +95,7 @@ class Router
     return require_once APP_PATH . '/routes/web.php';
   }
 
-  
+
 
 
 }
